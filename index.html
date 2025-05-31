@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fingerku</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; }
+    .topbar { background-color: #00a651; color: white; padding: 10px 20px; text-align: right; font-size: 14px; }
+    .topbar span { margin-left: 15px; }
+    .navbar { background-color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-bottom: 1px solid #ccc; }
+    .navbar .logo { font-size: 24px; font-weight: bold; color: #00a651; }
+    .navbar .logo span { color: #0072bc; }
+    .nav-links a { margin: 0 10px; text-decoration: none; color: #000; font-size: 16px; }
+    .nav-links a:hover { color: #00a651; }
+    .slider { width: 100%; overflow: hidden; position: relative; }
+    .slides { display: flex; width: 300%; animation: slide 15s infinite; }
+    .slides img { width: 100%; height: auto; }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+    .solutions, .benefits {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .solutions h2, .benefits h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    .solution-grid, .benefit-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .solution-item, .benefit-item {
+      flex: 1 1 300px;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .solution-item {
+      background: #f9f9f9;
+    }
+    .solution-item h3 {
+      font-size: 16px;
+      color: #333;
+    }
+    .solution-item p {
+      font-size: 14px;
+      color: #444;
+    }
+    .solution-item a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 14px;
+      background-color: #00a651;
+      color: white;
+      font-size: 14px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .benefits {
+      background-color: #222;
+      color: white;
+    }
+    .benefit-item {
+      background: transparent;
+    }
+    .benefit-item img {
+      width: 50px;
+      height: 50px;
+    }
+    .benefit-item h3 {
+      color: white;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .benefit-item p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <span>🎁 Dapatkan Kode Aktivasi</span>
+    <span><input type="checkbox" checked> Cek Keaslian Produk</span>
+  </div>
+
+  <div class="navbar">
+    <div class="logo">finger<span>ku</span></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="tentang-kami.html">Tentang Kami</a>
+      <a href="#">Testimonial</a>
+      <a href="#">Produk</a>
+      <a href="#">Solusi</a>
+      <a href="#">Kontak Kami</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Tambahkan div indikator setelah .slides dalam .slider -->
+<div class="indicators">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+  <div class="solutions">
+    <h2>Solusi Kami</h2>
+    <div class="solution-grid">
+      <div class="solution-item">
+        <img src="icon-solusi-absensi.png" alt="Absensi" style="width: 48px; margin-bottom: 15px;">
+        <h3>Absensi Untuk Berbagai Jenis Usaha</h3>
+        <p>Solusi lengkap untuk mengelola kehadiran, baik untuk UMKM, Perusahaan skala besar, hingga institusi Pendidikan.</p>
+        <a href="#">Baca Selengkapnya</a>
+      </div>
+      <div class="solution-item">
+        <img src="icon-solusi-cloud.png" alt="Akses" style="width: 48px; margin-bottom: 15px;">
+        <h3>Akses Data Absensi Dari Mana saja</h3>
+        <p>Tidak perlu lagi bingung datang ke masing-masing kantor untuk dapatkan data absensi dari lokasi berbeda.</p>
+        <a href="#">Baca Selengkapnya</a>
+      </div>
+      <div class="solution-item">
+        <img src="icon-solusi-sdk.png" alt="SDK" style="width: 48px; margin-bottom: 15px;">
+        <h3>Software Development Kit (SDK)</h3>
+        <p>Kembangkan aplikasi bisnis Anda lebih mudah dan instan dengan Software Development Kit Fingerspot.</p>
+        <a href="#">Baca Selengkapnya</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="benefits">
+    <h2>Manfaat Menggunakan Produk Fingerku</h2>
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <img src="icon-jaminan.png" alt="Jaminan">
+        <h3>Jaminan purna jual terpercaya</h3>
+        <p>Fingerspot memiliki 18 Customer Care Centre di 13 kota besar di Indonesia yang selalu siap melayani kebutuhan Anda.</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-fitur.png" alt="Fitur Lengkap">
+        <h3>Fitur produk terlengkap</h3>
+        <p>Produk Fingerspot baik software dan hardware menawarkan berbagai fitur terbaru seiring perkembangan teknologi terkini.</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-hardware.png" alt="Hardware">
+        <h3>Hardware terawat</h3>
+        <p>Mesin absensi sidik jari, wajah & akses kontrol pintu telah menjalani tes pemeriksaan dan lolos kendali mutu sesuai standar kualitas tinggi.</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-software.png" alt="Software">
+        <h3>Software paling mutakhir</h3>
+        <p>Tersedia berbagai software personalia dan penggajian terbaru yang memberikan kemudahan dalam pengolahan data absensi.</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-cloud.png" alt="Cloud">
+        <h3>Support cloud & teknologi mobile</h3>
+        <p>Layanan cloud dan produk berbasis teknologi mobile membantu Anda mengelola data absensi secara mudah, cepat, dan akurat.</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-customer.png" alt="Customer Care">
+        <h3>Layanan Customer Care Centre</h3>
+        <p>Tim Support Fingerspot selalu siap melayani pertanyaan dan menangani keluhan Anda secara cepat, tanggap, dan tepat.</p>
+      </div>
+    </div>
+  </div>
+
+<div class="solutions">
+  <h2>Nilai dan Budaya Fingerku</h2>
+  <div class="solution-grid">
+    <div class="solution-item">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/handshake_1f91d.png" alt="Integrity" style="width: 60px; margin-bottom: 15px;">
+      <h3>Integrity</h3>
+      <p>Berkomitmen dalam bekerja dan bertindak dengan etika yang menjunjung tinggi tanggung jawab.</p>
+    </div>
+    <div class="solution-item">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/scroll_1f4dc.png" alt="Trust" style="width: 60px; margin-bottom: 15px;">
+      <h3>Trust</h3>
+      <p>Menjadikan kepercayaan sebagai pondasi utama bagi hubungan bisnis. Memprioritaskan kejujuran dan konsistensi dalam setiap interaksi.</p>
+    </div>
+    <div class="solution-item">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/light-bulb_1f4a1.png" alt="Care" style="width: 60px; margin-bottom: 15px;">
+      <h3>Care</h3>
+      <p>Bersikap peduli, responsif dan memiliki rasa empati terhadap kebutuhan dan kesejahteraan setiap pihak yang terkait dengan perusahaan.</p>
+    </div>
+    <div class="solution-item">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/man-office-worker_1f468-200d-1f4bc.png" alt="Respect" style="width: 60px; margin-bottom: 15px;">
+      <h3>Respect</h3>
+      <p>Menciptakan lingkungan kerja yang inklusif juga menghargai hak dan martabat setiap orang.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="solutions">
+  <h2>Apa kata mereka tentang Fingerku</h2>
+  <div class="solution-grid">
+    <div class="solution-item" style="border: 2px solid #c6efce; background-color: #f6ffed;">
+      <p style="font-style: italic; color: #333;">
+        "Tahun ajaran baru 2021/2022 kami merekrut guru baru. Saya sebagai kepegawaian memasukkan data baru ke mesin finger tetapi mengalami kendala data karyawan baru tersebut tidak bisa terbaca di laporan..."
+      </p>
+      <strong>Setyo Wartono</strong><br>
+      <small>SD IT Cahaya Bangsa Mijen</small>
+    </div>
+    <div class="solution-item" style="border: 2px solid #c6efce; background-color: #f6ffed;">
+      <p style="font-style: italic; color: #333;">
+        "Kami sudah menggunakan juga mendistribusikan mesin presensi produk Fingerspot sejak tahun 2012... Kami sangat puas dengan pelayanan team Fingerspot. Kami selalu merekomendasikan..."
+      </p>
+      <strong>Jaka Fingerprint Kebumen</strong>
+    </div>
+    <div class="solution-item" style="border: 2px solid #c6efce; background-color: #f6ffed;">
+      <p style="font-style: italic; color: #333;">
+        "Hari Sabtu, sore-sore ada kendala setting jam kerja... dan ternyata lewat webnya Fingerspot ada konsultasi online. Saya pikir itu robot, ternyata dibantu petugas langsung..."
+      </p>
+      <strong>Rizki</strong><br>
+      <small>Klinik Kesehatan</small>
+    </div>
+	<div class="solution-item" style="border: 2px solid #c6efce; background-color: #f6ffed;">
+      <p style="font-style: italic; color: #333;">
+        "Hari Sabtu, sore-sore ada kendala setting jam kerja... dan ternyata lewat webnya Fingerspot ada konsultasi online. Saya pikir itu robot, ternyata dibantu petugas langsung..."
+      </p>
+      <strong>Rizki</strong><br>
+      <small>Klinik Kesehatan</small>
+    </div>
+	<div class="solution-item" style="border: 2px solid #c6efce; background-color: #f6ffed;">
+      <p style="font-style: italic; color: #333;">
+        "Hari Sabtu, sore-sore ada kendala setting jam kerja... dan ternyata lewat webnya Fingerspot ada konsultasi online. Saya pikir itu robot, ternyata dibantu petugas langsung..."
+      </p>
+      <strong>Rizki</strong><br>
+      <small>Klinik Kesehatan</small>
+    </div>
+	<div class="solution-item" style="border: 2px solid #c6efce; background-color: #f6ffed;">
+      <p style="font-style: italic; color: #333;">
+        "Hari Sabtu, sore-sore ada kendala setting jam kerja... dan ternyata lewat webnya Fingerspot ada konsultasi online. Saya pikir itu robot, ternyata dibantu petugas langsung..."
+      </p>
+      <strong>Rizki</strong><br>
+      <small>Klinik Kesehatan</small>
+    </div>
+  </div>
+</div>
+<footer style="background-color: #f9f9f9; padding: 40px 20px; font-size: 14px; color: #333;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px;">FOLLOW KAMI</h4>
+      <p>Ikuti Kami Di Sosial Media</p>
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <a href="#"><img src="facebook-icon.png" alt="Facebook" width="30"></a>
+        <a href="#"><img src="tiktok-icon.png" alt="TikTok" width="30"></a>
+        <a href="#"><img src="youtube-icon.png" alt="YouTube" width="30"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram" width="30"></a>
+      </div>
+      
+    </div>
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4>INFORMASI</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#">Kontak Kami</a></li>
+        <li><a href="#">Kebijakan Privasi</a></li>
+        <li><a href="#">Syarat & Ketentuan</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4>PRODUK POPULER</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#">fingerspot.io</a></li>
+        <li><a href="#">Revo W-202BNC</a></li>
+        <li><a href="#">Revo WDV-204BNC</a></li>
+        <li><a href="#">Revo WF-206BNC</a></li>
+        <li><a href="#">Revo WFA-207NC</a></li>
+        <li><a href="#">Revo WFV-208BNC</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4>AKUN SAYA</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#">Akun Saya</a></li>
+        <li><a href="#">Wishlist</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align: center; padding-top: 20px; color: #777;">
+    <p>&copy; Copyright @ Fingerku, 2019 - 2025</p>
+  </div>
+</footer>
+<!-- Tambahkan script ini di akhir file, sebelum </body> -->
+<script>
+  let index = 0;
+  const slides = document.querySelector(".slides");
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(i) {
+    slides.style.transform = `translateX(-${i * 100}%)`;
+    if (dots.length) {
+      dots.forEach((dot, idx) => {
+        dot.style.backgroundColor = idx === i ? '#00a651' : '#bbb';
+      });
+    }
+  }
+
+  setInterval(() => {
+    index = (index + 1) % 4;
+    showSlide(index);
+  }, 4000);
+</script>
+
+</style>
+</body>
+</html>
