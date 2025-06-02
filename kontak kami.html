@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak Kami</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    .topbar {
+      background-color: #00a651;
+      color: white;
+      padding: 10px 20px;
+      text-align: right;
+      font-size: 14px;
+    }
+    .navbar {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00a651;
+    }
+    .logo span {
+      color: #0072bc;
+    }
+    .nav-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+    }
+    .nav-links a:hover {
+      color: #00a651;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .left, .right {
+      flex: 1 1 400px;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .submit-btn {
+      background-color: #00a651;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .submit-btn:hover {
+      background-color: #007f3e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    🎁 Dapatkan Kode Aktivasi | ✅ Cek Keaslian Produk
+  </div>
+
+  <div class="navbar">
+    <div class="logo">finger<span>ku</span></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="tentang-kami.html">Tentang Kami</a>
+            <a href="#testimonial">Testimonial</a>
+      <a href="#">Produk</a>
+      <a href="#">Solusi</a>
+      <a href="#Kontak Kami">Kontak Kami</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <h2>Fingerku Balikpapan</h2>
+      <p>Jl. MT. Haryono No.2E RT.01, Damai Baru, Kec. Balikpapan Selatan</p>
+      <p>Telp : (0542) 8527738 , (0542) 8704572</p>
+      <p>WA : <a href="https://wa.me/6281250699887">0812-5069-9887</a></p>
+      <p><strong>Jam Kerja Operasional :</strong><br>
+      Senin - Jum'at : 08.30 - 20.00 WITA<br>
+      Sabtu : 08.30 - 15.00 WITA</p>
+    </div>
+
+    <div class="right">
+      <h2>Kontak Fingerku</h2>
+      <form>
+        <div class="form-group">
+          <label>Subjek:</label>
+          <select required>
+            <option value="">Pilih Subjek</option>
+            <option value="produk">Penawaran Produk</option>
+            <option value="layanan">Layanan Purna Jual</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Kantor Fingerku Terdekat:</label>
+          <select required>
+            <option value="">--- Pilih Lokasi Terdekat ---</option>
+            <option>Balikpapan</option>
+            <option>Jakarta</option>
+            <option>Surabaya</option>
+          </select>
+        </div>
+
+        <div class="form-group"><label>Perusahaan:</label><input type="text" required></div>
+        <div class="form-group"><label>Nama:</label><input type="text" required></div>
+        <div class="form-group"><label>Email:</label><input type="email" required></div>
+        <div class="form-group"><label>Telepon:</label><input type="text" required></div>
+        <div class="form-group"><label>Provinsi:</label>
+          <select required>
+            <option value="">--- Pilih Provinsi ---</option>
+            <option>Kalimantan Timur</option>
+            <option>Jawa Barat</option>
+            <option>Bali</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Kota / Kabupaten:</label><input type="text" required></div>
+        <div class="form-group"><label>Alamat:</label><input type="text" required></div>
+        <div class="form-group"><label>Pesan:</label><textarea></textarea></div>
+
+        <button type="submit" class="submit-btn">Kirim</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
