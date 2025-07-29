@@ -6,210 +6,214 @@
   <title>Fingerku</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; }
-    .topbar { background-color: #00a651; color: white; padding: 10px 20px; text-align: right; font-size: 14px; }
-    .topbar span { margin-left: 15px; }
-    .navbar { background-color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-bottom: 1px solid #ccc; }
-    .navbar .logo { font-size: 24px; font-weight: bold; color: #00a651; }
-    .navbar .logo span { color: #0072bc; }
-    .nav-links a { margin: 0 10px; text-decoration: none; color: #000; font-size: 16px; }
-    .nav-links a:hover { color: #00a651; }
-    .slider { width: 100%; overflow: hidden; position: relative; }
-    .slides { display: flex; width: 300%; animation: slide 15s infinite; }
-    .slides img { width: 100%; height: auto; }
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      100% { transform: translateX(0); }
+    .topbar {
+      background-color: #0072bc;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-align: right;
+      font-size: 14px;
+      border-bottom: 1px solid #ccc;
     }
-    .solutions, .benefits {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .solutions h2, .benefits h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-    .solution-grid, .benefit-grid {
+    .navbar {
+      background-color: white;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid #ccc;
     }
-    .solution-item, .benefit-item {
-      flex: 1 1 300px;
-      max-width: 300px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
     }
-    .solution-item {
-      background: #f9f9f9;
+    .navbar .logo span {
+      color: orange;
     }
-    .solution-item h3 {
-      font-size: 16px;
-      color: #333;
-    }
-    .solution-item p {
-      font-size: 14px;
-      color: #444;
-    }
-    .solution-item a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 6px 14px;
-      background-color: #00a651;
-      color: white;
-      font-size: 14px;
-      border-radius: 4px;
+    .nav-links a {
+      margin: 0 10px;
       text-decoration: none;
+      color: #000;
+      font-size: 16px;
     }
-    .benefits {
-      background-color: #222;
-      color: white;
+    .nav-links a:hover {
+      color: #00a651;
     }
-    .benefit-item {
-      background: transparent;
-    }
-    .benefit-item img {
-      width: 50px;
-      height: 50px;
-    }
-    .benefit-item h3 {
-      color: white;
-      font-size: 18px;
-      margin-top: 10px;
-    }
-    .benefit-item p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #ccc;
-    }
-  
     .underline {
       animation: underline-grow 1s ease-out forwards;
-
       width: 100px;
       height: 4px;
       background-color: #00a651;
       margin: 10px auto 0;
       border-radius: 2px;
     }
-    
     @keyframes underline-grow {
-      from {
-        width: 0;
-        opacity: 0;
-      }
-      to {
-        width: 100px;
-        opacity: 1;
-      }
+      from { width: 0; opacity: 0; }
+      to { width: 100px; opacity: 1; }
     }
-    </style>
-    
-    
+    .header {
+      background-color: white;
+      color: #00a651;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+    }
+    .content h2 {
+      color: #00a651;
+    }
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .team-member {
+      flex: 1 1 250px;
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-
   <div class="topbar">
-    <span>🎁 Dapatkan Kode Aktivasi</span>
-    <span><input type="checkbox" checked> Cek Keaslian Produk</span>
+    🎁 Dapatkan Kode Aktivasi | ✅ Cek Keaslian Produk
   </div>
 
   <div class="navbar">
     <div class="logo">finger<span>ku</span></div>
     <div class="nav-links">
-      <a href="https://fingerku.github.io/tes/#">Home</a>
-      <a href="tentang-kami.html">Tentang Kami</a>
-      <a href="#testimonial">Testimonial</a>
+      <a href="file:///C:/Users/Support/OneDrive/Desktop/HTML%20Projek/index.html">Home</a>
+      <a href="file:///C:/Users/Support/OneDrive/Desktop/HTML%20Projek/tentang-kami.html">Tentang Kami</a>
+      <a href="#">Testimonial</a>
       <a href="#">Produk</a>
       <a href="#">Solusi</a>
-      <a href="#">Kontak Kami</a>
+      <a href="file:///C:/Users/Support/OneDrive/Desktop/HTML%20Projek/kontak%20kami.html#">Kontak Kami</a>
       <a href="#">FAQ</a>
     </div>
   </div>
 
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentang Kami - Fingerku</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
-    .header { background-color: white; color: #00a651; padding: 40px 20px; text-align: center; }
-    .header h1 { margin: 0; font-size: 36px; }
-    .content { max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.8; }
-    .content h2 { color: #00a651; }
-    .team-section { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
-    .team-member { flex: 1 1 250px; text-align: center; border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
-    .team-member img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; }
-  
-    .underline {
-      animation: underline-grow 1s ease-out forwards;
-
-      width: 100px;
-      height: 4px;
-      background-color: #00a651;
-      margin: 10px auto 0;
-      border-radius: 2px;
-    }
-    
-    @keyframes underline-grow {
-      from {
-        width: 0;
-        opacity: 0;
-      }
-      to {
-        width: 100px;
-        opacity: 1;
-      }
-    }
-    </style>
-    
-    
-</head>
-<body>
   <div class="header">
     <h1>Tentang Kami</h1>
     <div class="underline"></div>
   </div>
 
   <div class="content">
-    <h2>Visi Kami</h2>
-    <p>Menjadi solusi terpercaya dalam teknologi absensi dan pengelolaan SDM berbasis biometrik di Indonesia.</p>
+    <h2>Profil Perusahaan</h2>
+    <p>
+      Fingerku adalah penyedia solusi teknologi absensi berbasis biometrik dan manajemen SDM yang telah melayani berbagai industri di Indonesia selama lebih dari satu dekade. Dengan mengedepankan inovasi dan kemudahan penggunaan, Fingerku hadir untuk menjawab tantangan pengelolaan kehadiran dan akses di era digital.
+    </p>
 
-    <h2>Misi Kami</h2>
+    <h2>Visi</h2>
+    <p>
+      Menjadi mitra terpercaya dalam menyediakan solusi teknologi absensi dan keamanan yang unggul di Indonesia.
+    </p>
+
+    <h2>Misi</h2>
     <ul>
-      <li>Menyediakan produk dan layanan yang inovatif dan mudah digunakan.</li>
-      <li>Memberikan dukungan purna jual yang profesional dan responsif.</li>
-      <li>Mendorong kemajuan teknologi informasi melalui integrasi dan kolaborasi.</li>
+      <li>Mengembangkan produk dan layanan inovatif berbasis kebutuhan pelanggan.</li>
+      <li>Menyediakan dukungan teknis yang cepat, responsif, dan profesional.</li>
+      <li>Mendorong digitalisasi dan efisiensi operasional perusahaan melalui integrasi teknologi biometrik.</li>
     </ul>
 
-    <h2>Siapa Kami?</h2>
-    <p>Fingerku adalah bagian dari ekosistem Fingerspot yang telah berpengalaman dalam sistem absensi dan keamanan sejak lebih dari 10 tahun lalu. Kami hadir untuk membantu perusahaan, sekolah, dan UMKM dalam mengelola kehadiran dan keamanan dengan teknologi terbaik.</p>
+    <h2>Nilai-Nilai Kami</h2>
+    <ul>
+      <li><strong>Inovasi:</strong> Selalu beradaptasi dengan perkembangan teknologi terbaru.</li>
+      <li><strong>Kepercayaan:</strong> Menjaga integritas dan keandalan dalam setiap layanan kami.</li>
+      <li><strong>Komitmen:</strong> Fokus pada solusi dan kepuasan pelanggan.</li>
+    </ul>
 
-    <h2>Tim Kami</h2>
+    <h2>Mengapa Memilih Fingerku?</h2>
+    <p>
+      Dengan pengalaman lebih dari 10 tahun, tim kami telah membantu ratusan klien dari berbagai sektor – mulai dari perusahaan besar, instansi pemerintah, sekolah, hingga UMKM – dalam memaksimalkan pengelolaan kehadiran dan kontrol akses.
+    </p>
+
     <div class="team-section">
       <div class="team-member">
-        <img src="team1.jpg" alt="Tim A">
+        <img src="team1.jpg" alt="Adi Nugroho">
         <h3>Adi Nugroho</h3>
         <p>CEO & Founder</p>
       </div>
       <div class="team-member">
-        <img src="team2.jpg" alt="Tim B">
+        <img src="team2.jpg" alt="Rina Kartika">
         <h3>Rina Kartika</h3>
         <p>Head of Product</p>
       </div>
       <div class="team-member">
-        <img src="team3.jpg" alt="Tim C">
+        <img src="team3.jpg" alt="Budi Santoso">
         <h3>Budi Santoso</h3>
         <p>Customer Support Lead</p>
       </div>
     </div>
   </div>
+
+  <footer style="background-color: #000; padding: 40px 20px; font-size: 14px; color: #f1f1f1;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4 style="margin-bottom: 10px; color: #ffffff;">FOLLOW KAMI</h4>
+        <p>Ikuti Kami Di Sosial Media</p>
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+          <a href="#"><img src="facebook-icon.png" alt="Facebook" width="30"></a>
+          <a href="#"><img src="tiktok-icon.png" alt="TikTok" width="30"></a>
+          <a href="#"><img src="youtube-icon.png" alt="YouTube" width="30"></a>
+          <a href="#"><img src="instagram-icon.png" alt="Instagram" width="30"></a>
+        </div>
+      </div>
+
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4 style="color: #ffffff;">INFORMASI</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: #ccc;">Tentang Kami</a></li>
+          <li><a href="#" style="color: #ccc;">Kontak Kami</a></li>
+          <li><a href="#" style="color: #ccc;">Kebijakan Privasi</a></li>
+          <li><a href="#" style="color: #ccc;">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4 style="color: #ffffff;">PRODUK POPULER</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: #ccc;">Fingerspot.io</a></li>
+          <li><a href="#" style="color: #ccc;">Revo W-230N</a></li>
+          <li><a href="#" style="color: #ccc;">Hikvision</a></li>
+          <li><a href="#" style="color: #ccc;">Smartlock</a></li>
+          <li><a href="#" style="color: #ccc;">Akses Pintu</a></li>
+          <li><a href="#" style="color: #ccc;">Absensi Online</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h4 style="color: #ffffff;">AKUN SAYA</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: #ccc;">Akun Saya</a></li>
+          <li><a href="#" style="color: #ccc;">Wishlist</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 20px; color: #aaa;">
+      <p>&copy; Copyright @ Fingerku, 2019 - 2025</p>
+    </div>
+  </footer>
 </body>
 </html>

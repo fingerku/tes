@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kontak Kami</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -11,11 +12,12 @@
       background-color: #f5f5f5;
     }
     .topbar {
-      background-color: #00a651;
-      color: white;
+      background-color: #0072bc;
+      color: #ffffff;
       padding: 10px 20px;
       text-align: right;
       font-size: 14px;
+      border-bottom: 1px solid #ccc;
     }
     .navbar {
       background-color: white;
@@ -23,15 +25,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
       border-bottom: 1px solid #ccc;
     }
-    .logo {
+    .navbar .logo {
       font-size: 24px;
       font-weight: bold;
-      color: #00a651;
+      color: black;
     }
-    .logo span {
-      color: #0072bc;
+    .navbar .logo span {
+      color: orange;
     }
     .nav-links a {
       margin: 0 10px;
@@ -43,27 +48,62 @@
       color: #00a651;
     }
     .container {
-      display: flex;
-      flex-wrap: wrap;
       max-width: 1200px;
       margin: 40px auto;
       padding: 20px;
       background-color: #fff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .left, .right {
-      flex: 1 1 400px;
-      padding: 20px;
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .lokasi-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .lokasi-selector button {
+      background: #0072bc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .lokasi-selector button:hover {
+      background: #005c9d;
+    }
+    .alamat {
+      display: none;
+      flex: 1 1 45%;
+      padding: 10px;
+    }
+    .alamat.active {
+      display: block;
+    }
+    .alamat iframe {
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .alamat i {
+      margin-right: 6px;
+      color: #0072bc;
+    }
+    form {
+      flex: 1 1 45%;
+      padding: 10px;
     }
     h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 22px;
       color: #333;
+      margin-bottom: 10px;
     }
     label {
       display: block;
-      margin-top: 10px;
-      margin-bottom: 5px;
+      margin: 10px 0 5px;
     }
     input, select, textarea {
       width: 100%;
@@ -75,9 +115,6 @@
     textarea {
       resize: vertical;
       height: 100px;
-    }
-    .form-group {
-      margin-bottom: 15px;
     }
     .submit-btn {
       background-color: #00a651;
@@ -92,11 +129,16 @@
     .submit-btn:hover {
       background-color: #007f3e;
     }
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="topbar">
+ <div class="topbar">
     🎁 Dapatkan Kode Aktivasi | ✅ Cek Keaslian Produk
   </div>
 
@@ -104,72 +146,184 @@
     <div class="logo">finger<span>ku</span></div>
     <div class="nav-links">
       <a href="file:///C:/Users/Support/OneDrive/Desktop/HTML%20Projek/index.html">Home</a>
-      <a href="tentang-kami.html">Tentang Kami</a>
-      <a href="file:///C:/Users/Support/OneDrive/Desktop/HTML%20Projek/index.html#testimonialTestimonial">Testimonial</a>
+      <a href="file:///C:/Users/Support/OneDrive/Desktop/HTML%20Projek/tentang-kami.html">Tentang Kami</a>
+      <a href="#">Testimonial</a>
       <a href="#">Produk</a>
       <a href="#">Solusi</a>
-      <a href="#Kontak Kami">Kontak Kami</a>
+      <a href="file:///C:/Users/Support/OneDrive/Desktop/HTML%20Projek/kontak%20kami.html#">Kontak Kami</a>
       <a href="#">FAQ</a>
     </div>
   </div>
 
   <div class="container">
-    <div class="left">
-      <h2>Fingerku Tangerang</h2>
-      <p><strong>Jl H Thosin Sudimara Selatan No.132</strong><br>
-      <strong>Ciledug tangerang</strong><br>
-      15151</p>
-      <p>WA : <a href="https://wa.me/6281316869767">0813-1686-9767</a></p>
-      <p><strong>Jam Kerja Operasional :</strong><br>
-      Senin - Jum'at : 08.30 - 17.00 WIB<br>
-      Sabtu : 08.30 - 15.00 WIB</p>
+    <div class="lokasi-selector">
+      <button onclick="tampilkanAlamat('tangerang')"><i class="fas fa-map-marker-alt"></i> Tangerang</button>
+      <button onclick="tampilkanAlamat('jakbar')"><i class="fas fa-map-marker-alt"></i> Jakarta Barat</button>
+      <button onclick="tampilkanAlamat('jatiwaringin')"><i class="fas fa-map-marker-alt"></i> Bekasi</button>
+      <button onclick="tampilkanAlamat('bandung')"><i class="fas fa-map-marker-alt"></i> Bandung</button>
     </div>
-	
-	
 
-    <div class="right">
-      <h2>Kontak Fingerku</h2>
+    <div class="main-content">
+      <!-- Tangerang -->
+      <div class="alamat active" id="tangerang">
+        <h2>Fingerku Tangerang</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Jl H Thosin Sudimara Selatan Rt.002 Rw.07 No.132<br>Ciledug, Tangerang 15151</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6281316869767">0813-1686-9767</a></p>
+        <p><strong>Jam Kerja:</strong><br>Senin - Jum'at: 08.30 - 17.00 WIB<br>Sabtu: 08.30 - 15.00 WIB</p>
+        <iframe src="https://www.google.com/maps/embed?...TangerangLink..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Jakarta Barat -->
+      <div class="alamat" id="jakbar">
+        <h2>Fingerku Jakarta Barat</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Adhi Karya Pintu Air Rt.004 Rw.005 No.54<br>Jakarta Barat, DKI Jakarta 11520</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6281316869767">0813-1686-9767</a></p>
+        <p><strong>Jam Kerja:</strong><br>Senin - Jum'at: 08.30 - 17.00 WIB<br>Sabtu: 08.30 - 15.00 WIB</p>
+        <iframe src="https://www.google.com/maps/embed?...JakartaBaratLink..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Jatiwaringin -->
+      <div class="alamat" id="jatiwaringin">
+        <h2>Fingerku Jatiwaringin</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Raya Jatiwaringin No.45, Pondok Gede<br>Bekasi, Jawa Barat 17411</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6281234567890">0812-3456-7890</a></p>
+        <p><strong>Jam Kerja:</strong><br>Senin - Jum'at: 08.30 - 17.00 WIB<br>Sabtu: 08.30 - 15.00 WIB</p>
+        <iframe src="https://www.google.com/maps/embed?...JatiwaringinLink..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Bandung -->
+      <div class="alamat" id="bandung">
+        <h2>Fingerku Bandung</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. Soekarno-Hatta No.123, Bandung<br>Jawa Barat 40286</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6281122334455">0811-2233-4455</a></p>
+        <p><strong>Jam Kerja:</strong><br>Senin - Jum'at: 08.30 - 17.00 WIB<br>Sabtu: 08.30 - 15.00 WIB</p>
+        <iframe src="https://www.google.com/maps/embed?...BandungLink..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Form -->
       <form>
-        <div class="form-group">
-          <label>Subjek:</label>
-          <select required>
-            <option value="">Pilih Subjek</option>
-            <option value="produk">Penawaran Produk</option>
-            <option value="layanan">Layanan Purna Jual</option>
-			<option value="layanan">Layanan Trouble Shot</option>
-          </select>
-        </div>
+        <h2>Kontak Fingerku</h2>
+        <label>Subjek:</label>
+        <select required>
+          <option value="">Pilih Subjek</option>
+          <option value="produk">Penawaran Produk</option>
+          <option value="layanan">Layanan Purna Jual</option>
+          <option value="trouble">Layanan Trouble Shot</option>
+        </select>
 
-        <div class="form-group">
-          <label>Kantor Fingerku Terdekat:</label>
-          <select required>
-            <option value="">--- Pilih Lokasi Terdekat ---</option>
-            <option>Balikpapan</option>
-            <option>Tangerang HO</option>
-            <option>Jakarta Barat</option>
-          </select>
-        </div>
+        <label>Kantor Fingerku Terdekat:</label>
+        <select required>
+          <option value="">--- Pilih Lokasi Terdekat ---</option>
+          <option>Tangerang HO</option>
+          <option>Jakarta Barat</option>
+          <option>Jatiwaringin</option>
+          <option>Bandung</option>
+        </select>
 
-        <div class="form-group"><label>Perusahaan:</label><input type="text" required></div>
-        <div class="form-group"><label>Nama:</label><input type="text" required></div>
-        <div class="form-group"><label>Email:</label><input type="email" required></div>
-        <div class="form-group"><label>Telepon:</label><input type="text" required></div>
-        <div class="form-group"><label>Provinsi:</label>
-          <select required>
-            <option value="">--- Pilih Provinsi ---</option>
-            <option>Tangerang Kota</option>
-            <option>Jawa Barat</option>
-            <option>Bali</option>
-          </select>
-        </div>
-        <div class="form-group"><label>Kota / Kabupaten:</label><input type="text" required></div>
-        <div class="form-group"><label>Alamat:</label><input type="text" required></div>
-        <div class="form-group"><label>Pesan:</label><textarea></textarea></div>
-
+        <label>Perusahaan:</label>
+        <input type="text" required>
+        <label>Nama:</label>
+        <input type="text" required>
+        <label>Email:</label>
+        <input type="email" required>
+        <label>Telepon:</label>
+        <input type="text" required>
+        <label>Provinsi:</label>
+        <select required>
+          <option value="">--- Pilih Provinsi ---</option>
+          <option>Banten</option>
+          <option>DKI Jakarta</option>
+          <option>Jawa Barat</option>
+        </select>
+        <label>Kota / Kabupaten:</label>
+        <input type="text" required>
+        <label>Alamat:</label>
+        <input type="text" required>
+        <label>Pesan:</label>
+        <textarea></textarea>
         <button type="submit" class="submit-btn">Kirim</button>
       </form>
     </div>
   </div>
+
+<footer style="background-color: #000; padding: 40px 20px; font-size: 14px; color: #f1f1f1;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4 style="margin-bottom: 10px; color: #ffffff;">FOLLOW KAMI</h4>
+      <p>Ikuti Kami Di Sosial Media</p>
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <a href="https://www.facebook.com/people/Fingerku/100063905441040/"><img src="facebook-icon.png" alt="Facebook" width="30"></a>
+        <a href="#"><img src="tiktok-icon.png" alt="TikTok" width="30"></a>
+        <a href="https://www.youtube.com/@fingerku/videos"><img src="youtube-icon.png" alt="YouTube" width="30"></a>
+        <a href="https://www.instagram.com/fingerkuu/"><img src="instagram-icon.png" alt="Instagram" width="30"></a>
+      </div>
+    </div>
+
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4 style="color: #ffffff;">INFORMASI</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="Tentang Kami" style="color: #ccc;">Tentang Kami</a></li>
+        <li><a href="#" style="color: #ccc;">Kontak Kami</a></li>
+        <li><a href="#" style="color: #ccc;">Kebijakan Privasi</a></li>
+        <li><a href="#" style="color: #ccc;">Syarat & Ketentuan</a></li>
+      </ul>
+    </div>
+
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4 style="color: #ffffff;">PRODUK POPULER</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#" style="color: #ccc;">Fingerspot.io</a></li>
+        <li><a href="#" style="color: #ccc;">Revo W-230N</a></li>
+        <li><a href="#" style="color: #ccc;">Hikvision</li>
+        <li><a href="#" style="color: #ccc;">Smartlock</a></li>
+        <li><a href="#" style="color: #ccc;">Akses Pintu</a></li>
+        <li><a href="#" style="color: #ccc;">Absensi Online</a></li>
+      </ul>
+    </div>
+
+    <div style="flex: 1 1 200px; margin-bottom: 20px;">
+      <h4 style="color: #ffffff;">AKUN SAYA</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#" style="color: #ccc;">Akun Saya</a></li>
+        <li><a href="#" style="color: #ccc;">Wishlist</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="text-align: center; padding-top: 20px; color: #aaa;">
+    <p>&copy; Copyright @ Fingerku, 2019 - 2025</p>
+  </div>
+</footer>
+
+<!-- Tambahkan script ini di akhir file, sebelum </body> -->
+<script>
+  let index = 0;
+  const slides = document.querySelector(".slides");
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(i) {
+    slides.style.transform = `translateX(-${i * 100}%)`;
+    if (dots.length) {
+      dots.forEach((dot, idx) => {
+        dot.style.backgroundColor = idx === i ? '#00a651' : '#bbb';
+      });
+    }
+  }
+
+  setInterval(() => {
+    index = (index + 1) % 4;
+    showSlide(index);
+  }, 4000);
+</script>
+
+</style>
+
+  <script>
+    function tampilkanAlamat(id) {
+      document.querySelectorAll('.alamat').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
